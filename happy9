@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"/>
+<title>判断是否是微信内置浏览器</title>
 </head>
 <body>
-<h5  style="color: #0b5394; font-size: x-large;margin-top:150" align="center" valign="center" >页面跳转中...请稍后</h5>
+<h1>如果用微信浏览器打开可以看到下面的文字</h1>
+<p></p >
 </body>
 </html>
+<script type="text/javascript">
+window.onload = function(){
+if(isWeiXin()){
+var p = document.getElementsByTagName('p');
+p[0].innerHTML = window.navigator.userAgent;
+}
+}
+function isWeiXin(){
+var ua = window.navigator.userAgent.toLowerCase();
+if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+return true;
+}else{
+return false;
+}
+}
+</script>
